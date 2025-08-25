@@ -1,0 +1,372 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIGAP Peduli – Layanan Pengaduan Kekerasan Anak & Perempuan</title>
+  <meta name="description" content="SIGAP (Sistem Pengaduan Anak dan Perempuan) Peduli adalah platform pengaduan dan pendampingan aman, cepat, dan ramah pengguna." />
+  <meta property="og:title" content="SIGAP Peduli" />
+  <meta property="og:description" content="Platform pengaduan & pendampingan anak dan perempuan korban kekerasan." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0B3A6A" />
+  <!-- Tailwind via CDN (JIT) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { primary: '#0B3A6A', accent: '#FDB022' } } } }</script>
+  <!-- Lucide Icons -->
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    .glass { background: rgba(255,255,255,0.85); backdrop-filter: blur(8px); }
+    .link { text-decoration: underline; text-underline-offset: 3px; }
+  </style>
+</head>
+<body class="min-h-screen bg-white text-slate-900 selection:bg-accent/30">
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-accent text-slate-900 px-3 py-2 rounded-lg">Lewati ke konten</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
+    <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-2xl" style="background:#0B3A6A"></div>
+        <div>
+          <p class="text-sm font-semibold">SIGAP Peduli</p>
+          <p class="text-xs text-slate-500">Sistem Pengaduan Anak dan Perempuan</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Navigasi utama">
+        <a href="#tentang" class="hover:text-slate-600">Tentang</a>
+        <a href="#layanan" class="hover:text-slate-600">Layanan</a>
+        <a href="#alur" class="hover:text-slate-600">Cara Melapor</a>
+        <a href="#edukasi" class="hover:text-slate-600">Artikel & Edukasi</a>
+        <a href="#kontak" class="hover:text-slate-600">Kontak</a>
+      </nav>
+      <div class="md:hidden">
+        <button id="menuBtn" class="p-2 rounded-xl border" aria-expanded="false" aria-controls="mobileNav">
+          <i data-lucide="menu" class="w-5 h-5"></i><span class="sr-only">Menu</span>
+        </button>
+      </div>
+      <a href="#lapor" class="hidden sm:inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-semibold shadow-sm" style="background:#FDB022">
+        Laporkan Sekarang <i data-lucide="arrow-right" class="w-4 h-4"></i>
+      </a>
+    </div>
+    <!-- Mobile nav -->
+    <div id="mobileNav" class="md:hidden hidden border-t border-slate-200">
+      <div class="px-4 py-3 grid gap-2 text-sm">
+        <a href="#tentang" class="py-2">Tentang</a>
+        <a href="#layanan" class="py-2">Layanan</a>
+        <a href="#alur" class="py-2">Cara Melapor</a>
+        <a href="#edukasi" class="py-2">Artikel & Edukasi</a>
+        <a href="#kontak" class="py-2">Kontak</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="border-b border-slate-100 bg-gradient-to-b from-slate-50 to-white">
+      <div class="mx-auto max-w-7xl px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="text-3xl md:text-5xl font-bold leading-tight">Lindungi Anak, Dukung Perempuan,<br> Wujudkan Aman dan Setara</h1>
+          <p class="mt-4 text-slate-600 md:text-lg">SIGAP Peduli adalah platform pengaduan dan pendampingan yang aman, cepat, dan ramah pengguna.</p>
+          <div class="mt-6 flex gap-3">
+            <a href="#lapor" class="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm" style="background:#FDB022">Laporkan Sekarang <i data-lucide="arrow-right" class="w-4 h-4"></i></a>
+            <a href="#tentang" class="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold border border-slate-300">Pelajari Lebih Lanjut</a>
+          </div>
+          <div class="mt-6 flex flex-wrap items-center gap-4 text-sm text-slate-600">
+            <span class="inline-flex items-center gap-2"><i data-lucide="shield" class="w-4 h-4"></i> Keamanan data terenkripsi</span>
+            <span class="inline-flex items-center gap-2"><i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Hotline</span>
+          </div>
+        </div>
+        <div class="md:justify-self-end">
+          <div class="rounded-3xl p-1" style="background:#0B3A6A">
+            <div class="rounded-3xl bg-white p-6 shadow-xl">
+              <div class="rounded-2xl border border-slate-200 p-4">
+                <p class="text-sm font-semibold">Kontak Darurat</p>
+                <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <a href="tel:129" class="rounded-2xl border px-4 py-3 flex items-center justify-between hover:shadow">
+                    <span class="text-sm">Hotline 129</span>
+                    <i data-lucide="phone" class="w-4 h-4"></i>
+                  </a>
+                  <a id="waHotlineHero" href="#" class="rounded-2xl border px-4 py-3 flex items-center justify-between hover:shadow">
+                    <span class="text-sm">WhatsApp Hotline</span>
+                    <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  </a>
+                </div>
+                <a href="#lapor" class="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-3 font-semibold shadow-sm" style="background:#FDB022">Form Pengaduan Online</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tentang -->
+    <section id="tentang" class="mx-auto max-w-7xl px-4 py-14">
+      <div class="grid lg:grid-cols-3 gap-8 items-start">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl md:text-3xl font-bold">Tentang SIGAP Peduli</h2>
+          <p class="mt-3 text-slate-700">SIGAP adalah singkatan dari <strong>Sistem Pengaduan Anak dan Perempuan</strong>. SIGAP Peduli berfokus pada layanan pengaduan, verifikasi aman, dan pendampingan hukum serta psikologis bagi korban.</p>
+          <div class="mt-6 grid sm:grid-cols-3 gap-4">
+            <div class="rounded-2xl border p-5"><p class="text-2xl font-bold">100+</p><p class="text-sm text-slate-600">Laporan ditangani</p></div>
+            <div class="rounded-2xl border p-5"><p class="text-2xl font-bold">12</p><p class="text-sm text-slate-600">Mitra aktif</p></div>
+            <div class="rounded-2xl border p-5"><p class="text-2xl font-bold">24/7</p><p class="text-sm text-slate-600">Dukungan darurat</p></div>
+          </div>
+        </div>
+        <aside class="rounded-2xl border p-6 bg-slate-50">
+          <h3 class="font-semibold">Mitra</h3>
+          <ul class="mt-3 space-y-2 text-sm text-slate-700 list-disc list-inside">
+            <li>KemenPPPA</li>
+            <li>Sekolah & Perguruan Tinggi</li>
+            <li>Kepolisian & Lembaga Hukum</li>
+            <li>Media Lokal</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <!-- Layanan -->
+    <section id="layanan" class="bg-slate-50 border-y">
+      <div class="mx-auto max-w-7xl px-4 py-14">
+        <h2 class="text-2xl md:text-3xl font-bold">Layanan</h2>
+        <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div class="rounded-2xl border p-5 bg-white shadow-sm">
+            <div class="flex items-center gap-3 mb-2"><i data-lucide="file-text" class="w-6 h-6"></i><h3 class="font-semibold">Pengaduan Online</h3></div>
+            <p class="text-sm text-slate-600">Form aman & terenkripsi untuk melapor kasus kekerasan.</p>
+          </div>
+          <div class="rounded-2xl border p-5 bg-white shadow-sm">
+            <div class="flex items-center gap-3 mb-2"><i data-lucide="shield" class="w-6 h-6"></i><h3 class="font-semibold">Pendampingan Hukum</h3></div>
+            <p class="text-sm text-slate-600">Akses bantuan hukum dan pelaporan ke pihak berwenang.</p>
+          </div>
+          <div class="rounded-2xl border p-5 bg-white shadow-sm">
+            <div class="flex items-center gap-3 mb-2"><i data-lucide="book-open" class="w-6 h-6"></i><h3 class="font-semibold">Konseling Psikologi</h3></div>
+            <p class="text-sm text-slate-600">Sesi konseling dengan tenaga psikologi berpengalaman.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cara Melapor -->
+    <section id="alur" class="mx-auto max-w-7xl px-4 py-14">
+      <h2 class="text-2xl md:text-3xl font-bold">Cara Melapor</h2>
+      <p class="mt-2 text-slate-600">Ikuti langkah-langkah sederhana berikut untuk melaporkan kasus secara aman.</p>
+      <div class="mt-8 grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl border bg-white p-6 shadow-sm">
+          <div class="flex items-center gap-3"><i data-lucide="file-text" class="w-6 h-6"></i><h3 class="font-semibold">1. Buat Laporan</h3></div>
+          <p class="mt-2 text-sm text-slate-600">Isi formulir singkat tentang kejadian.</p>
+        </div>
+        <div class="rounded-2xl border bg-white p-6 shadow-sm">
+          <div class="flex items-center gap-3"><i data-lucide="lock" class="w-6 h-6"></i><h3 class="font-semibold">2. Verifikasi Aman</h3></div>
+          <p class="mt-2 text-sm text-slate-600">Data diverifikasi oleh petugas terlatih.</p>
+        </div>
+        <div class="rounded-2xl border bg-white p-6 shadow-sm">
+          <div class="flex items-center gap-3"><i data-lucide="shield" class="w-6 h-6"></i><h3 class="font-semibold">3. Pendampingan</h3></div>
+          <p class="mt-2 text-sm text-slate-600">Arahan, bantuan hukum, & psikologis.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form Pengaduan -->
+    <section id="lapor" class="bg-slate-50 border-y">
+      <div class="mx-auto max-w-7xl px-4 py-14">
+        <div class="rounded-3xl p-8 border shadow-sm bg-white">
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div>
+              <h2 class="text-2xl md:text-3xl font-bold">Form Pengaduan Online</h2>
+              <p class="mt-2 text-slate-600">Masukkan informasi singkat terkait kejadian. Data Anda kami lindungi.</p>
+              <form id="reportForm" class="mt-6 grid grid-cols-1 gap-4" novalidate>
+                <input id="name" class="rounded-2xl border px-4 py-3" placeholder="Nama (opsional)" aria-label="Nama (opsional)">
+                <input id="contact" required class="rounded-2xl border px-4 py-3" placeholder="Kontak (WA/Email)" aria-label="Kontak"/>
+                <select id="type" required class="rounded-2xl border px-4 py-3" aria-label="Jenis Kejadian">
+                  <option value="">Jenis Kejadian</option>
+                  <option>Kekerasan Fisik</option>
+                  <option>Kekerasan Psikis</option>
+                  <option>Kekerasan Seksual</option>
+                  <option>Penelantaran</option>
+                  <option>Lainnya</option>
+                </select>
+                <textarea id="detail" required class="rounded-2xl border px-4 py-3" rows="5" placeholder="Ceritakan singkat kejadian & lokasi" aria-label="Detail kejadian"></textarea>
+                <div class="flex items-center gap-2 text-xs text-slate-500">
+                  <input id="agree" type="checkbox" class="rounded" required>
+                  <label for="agree">Saya menyetujui kebijakan privasi SIGAP Peduli.</label>
+                </div>
+                <button type="submit" class="inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 font-semibold shadow-sm" style="background:#FDB022">
+                  Kirim Laporan <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+                <p class="text-xs text-slate-500">Dengan mengirimkan laporan, Anda menyetujui kebijakan privasi kami.</p>
+                <p id="formMsg" class="text-sm font-medium"></p>
+              </form>
+            </div>
+            <div class="rounded-2xl border p-6 bg-slate-50">
+              <h3 class="font-semibold">Keamanan & Privasi</h3>
+              <ul class="mt-3 space-y-2 text-sm text-slate-600 list-disc list-inside">
+                <li>Transport encryption (HTTPS) & at-rest encryption (server).</li>
+                <li>Redaksi data sensitif & akses berbasis peran.</li>
+                <li>Notifikasi status laporan opsional (email/WA).</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artikel & FAQ -->
+    <section id="edukasi" class="mx-auto max-w-7xl px-4 py-14">
+      <h2 class="text-2xl md:text-3xl font-bold">Artikel & Edukasi</h2>
+      <div class="mt-4 grid md:grid-cols-3 gap-5">
+        <article class="rounded-2xl border bg-white p-5 shadow-sm">
+          <h3 class="font-semibold">Kenali Tanda Kekerasan</h3>
+          <p class="mt-2 text-sm text-slate-600">Panduan singkat mengenali tanda kekerasan pada anak & perempuan.</p>
+          <button class="mt-4 inline-flex items-center gap-2 text-sm font-semibold">Baca Selengkapnya <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+        </article>
+        <article class="rounded-2xl border bg-white p-5 shadow-sm">
+          <h3 class="font-semibold">Langkah Darurat</h3>
+          <p class="mt-2 text-sm text-slate-600">Apa yang harus dilakukan segera saat terjadi kekerasan.</p>
+          <button class="mt-4 inline-flex items-center gap-2 text-sm font-semibold">Baca Selengkapnya <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+        </article>
+        <article class="rounded-2xl border bg-white p-5 shadow-sm">
+          <h3 class="font-semibold">Dukungan Hukum</h3>
+          <p class="mt-2 text-sm text-slate-600">Informasi layanan bantuan hukum bagi korban.</p>
+          <button class="mt-4 inline-flex items-center gap-2 text-sm font-semibold">Baca Selengkapnya <i data-lucide="arrow-right" class="w-4 h-4"></i></button>
+        </article>
+      </div>
+
+      <div class="mt-12 rounded-2xl border bg-white p-6">
+        <h3 class="font-semibold">FAQ</h3>
+        <details class="group mt-3 rounded-xl border p-4">
+          <summary class="cursor-pointer font-medium">Apa yang harus saya laporkan?</summary>
+          <p class="mt-2 text-sm text-slate-600">Informasi kejadian, waktu, lokasi, dan bukti pendukung (jika ada). Pelapor tidak harus korban langsung.</p>
+        </details>
+        <details class="group mt-3 rounded-xl border p-4">
+          <summary class="cursor-pointer font-medium">Apakah data saya aman?</summary>
+          <p class="mt-2 text-sm text-slate-600">Ya. Kami menerapkan enkripsi, kontrol akses, dan SOP kerahasiaan.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Kontak -->
+    <section id="kontak" class="bg-slate-50 border-y">
+      <div class="mx-auto max-w-7xl px-4 py-14">
+        <div class="rounded-3xl p-8 border shadow-sm bg-white">
+          <h2 class="text-2xl md:text-3xl font-bold">Kontak</h2>
+          <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+            <a href="tel:129" class="rounded-2xl border p-4 flex items-center justify-between"><span>Hotline</span><i data-lucide="phone" class="w-4 h-4"></i></a>
+            <a id="waHotlineContact" href="#" class="rounded-2xl border p-4 flex items-center justify-between"><span>WhatsApp</span><i data-lucide="message-circle" class="w-4 h-4"></i></a>
+            <div class="rounded-2xl border p-4">Email: <a id="emailLink" href="#" class="link">halo@sigappeduli.org</a></div>
+            <div class="rounded-2xl border p-4">Alamat: Jl. Contoh No. 1, Kota</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-white">
+    <div class="mx-auto max-w-7xl px-4 py-10 grid md:grid-cols-4 gap-6">
+      <div>
+        <p class="font-semibold">SIGAP Peduli</p>
+        <p class="text-sm text-slate-300 mt-2">Rasa aman, dipercaya, dan mudah diakses.</p>
+      </div>
+      <div>
+        <p class="font-semibold">Tautan</p>
+        <ul class="mt-2 text-sm text-slate-300 space-y-1">
+          <li><a href="#" class="hover:underline">Beranda</a></li>
+          <li><a href="#tentang" class="hover:underline">Tentang Kami</a></li>
+          <li><a href="#layanan" class="hover:underline">Layanan</a></li>
+          <li><a href="#alur" class="hover:underline">Cara Melapor</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold">Darurat</p>
+        <p class="text-sm text-slate-300 mt-2">Hotline 24 Jam • WA Hotline</p>
+      </div>
+      <div>
+        <p class="font-semibold">Ikuti Kami</p>
+        <div class="text-sm text-slate-300 mt-2">Prototype By Kevin Fata Zacky</div>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-slate-800 py-4 text-center text-xs text-slate-400">© <span id="year"></span> SIGAP Peduli. All rights reserved.</div>
+  </footer>
+
+  <!-- Privacy Modal (placeholder) -->
+  <div id="privacyModal" class="fixed inset-0 hidden items-center justify-center bg-black/40 p-4">
+    <div class="glass max-w-lg w-full rounded-2xl p-6 border">
+      <h3 class="font-semibold">Kebijakan Privasi</h3>
+      <p class="mt-2 text-sm text-slate-700">Kami berkomitmen melindungi data Anda. Detail lengkap kebijakan privasi akan dicantumkan di sini.</p>
+      <div class="mt-4 flex gap-2 justify-end">
+        <button id="closePrivacy" class="px-4 py-2 rounded-xl border">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Icons
+    window.addEventListener('DOMContentLoaded', () => { if (window.lucide) lucide.createIcons(); });
+
+    // Dynamic year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileNav = document.getElementById('mobileNav');
+    if (menuBtn) {
+      menuBtn.addEventListener('click', () => {
+        const open = mobileNav.classList.toggle('hidden');
+        menuBtn.setAttribute('aria-expanded', String(!open));
+      });
+    }
+
+    // Hotline/Email configurables (edit these once, reflected across site)
+    const CONFIG = {
+      whatsappNumber: '628XXXXXXXXXX', // ganti dengan nomor WA SIGAP (tanpa +)
+      email: 'halo@sigappeduli.org'
+    };
+    const waUrl = `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent('Halo SIGAP Peduli, saya ingin melapor dan membutuhkan bantuan.')}`;
+    const emailUrl = `mailto:${CONFIG.email}?subject=${encodeURIComponent('Pengaduan ke SIGAP Peduli')}`;
+    document.getElementById('waHotlineHero').href = waUrl;
+    document.getElementById('waHotlineContact').href = waUrl;
+    document.getElementById('emailLink').href = emailUrl;
+
+    // Simple client-side submit (demo)
+    const form = document.getElementById('reportForm');
+    const formMsg = document.getElementById('formMsg');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      formMsg.textContent = '';
+
+      const payload = {
+        name: document.getElementById('name').value.trim(),
+        contact: document.getElementById('contact').value.trim(),
+        type: document.getElementById('type').value,
+        detail: document.getElementById('detail').value.trim(),
+        timestamp: new Date().toISOString()
+      };
+
+      if (!payload.contact || !payload.type || !payload.detail) {
+        formMsg.textContent = 'Mohon lengkapi kolom wajib.';
+        formMsg.className = 'text-sm font-medium text-red-600';
+        return;
+      }
+
+      // DEMO: simpan ke localStorage (ganti dengan POST ke backend Anda)
+      try {
+        const key = 'sigap-reports';
+        const existing = JSON.parse(localStorage.getItem(key) || '[]');
+        existing.push(payload);
+        localStorage.setItem(key, JSON.stringify(existing));
+        form.reset();
+        formMsg.textContent = 'Laporan terkirim (demo). Backend nyata bisa dihubungkan kapan saja.';
+        formMsg.className = 'text-sm font-medium text-green-700';
+      } catch (err) {
+        formMsg.textContent = 'Terjadi kesalahan saat menyimpan.';
+        formMsg.className = 'text-sm font-medium text-red-600';
+      }
+    });
+
+    // Privacy modal demo
+    const privacyModal = document.getElementById('privacyModal');
+    document.querySelectorAll('[data-open-privacy]').forEach(btn => btn.addEventListener('click', () => privacyModal.classList.remove('hidden')));
+    document.getElementById('closePrivacy').addEventListener('click', () => privacyModal.classList.add('hidden'));
+  </script>
+</body>
+</html>
