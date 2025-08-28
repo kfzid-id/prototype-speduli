@@ -10,7 +10,7 @@
   <meta property="og:type" content="website" />
   <meta name="theme-color" content="#0B3A6A" />
 
-  <!-- Tailwind via CDN -->
+  <!-- Tailwind via CDN (JIT) -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -92,7 +92,7 @@
     </div>
   </header>
 
-  <!-- Main content -->
+  <!-- Main -->
   <main id="main">
     <!-- Hero -->
     <section class="relative bg-primary text-white">
@@ -102,10 +102,10 @@
           Layanan Pengaduan Kekerasan Anak & Perempuan yang aman, cepat, dan terpercaya.
         </p>
         <div class="mt-6 flex flex-col sm:flex-row justify-center items-center gap-4">
-          <a id="emailLinkHero" href="mailto:lapor.sigap@gmail.com?subject=Pengaduan ke SIGAP Peduli" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-accent px-5 py-3 text-slate-900 font-semibold">
+          <a id="emailLinkHero" href="mailto:lapor.sigap@gmail.com?subject=Pengaduan ke SIGAP Peduli" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-accent px-5 py-3 text-slate-900 font-semibold min-w-[200px]">
             Email Pengaduan <i data-lucide="mail" class="w-5 h-5"></i>
           </a>
-          <a href="#lapor" class="inline-flex items-center justify-center gap-2 rounded-2xl border px-5 py-3 font-semibold">
+          <a href="#lapor" class="inline-flex items-center justify-center gap-2 rounded-2xl border px-5 py-3 font-semibold min-w-[200px]">
             Laporkan Sekarang <i data-lucide="arrow-right" class="w-5 h-5"></i>
           </a>
         </div>
@@ -117,7 +117,8 @@
       <div class="mx-auto max-w-5xl px-4 text-center">
         <h2 class="text-2xl font-bold text-primary">Tentang SIGAP Peduli</h2>
         <p class="mt-4 text-slate-600">
-          SIGAP Peduli hadir untuk memberikan rasa aman dan perlindungan kepada anak dan perempuan korban kekerasan. Melalui layanan pengaduan yang mudah diakses, kami berkomitmen untuk mendampingi setiap laporan dengan serius.
+          SIGAP Peduli hadir untuk memberikan rasa aman dan perlindungan kepada anak dan perempuan korban kekerasan.
+          Melalui layanan pengaduan yang mudah diakses, kami berkomitmen untuk mendampingi setiap laporan dengan serius.
         </p>
       </div>
     </section>
@@ -200,15 +201,15 @@
         <div class="mt-10 grid md:grid-cols-3 gap-6">
           <article class="p-6 border rounded-2xl">
             <h3 class="font-semibold">Pencegahan Kekerasan Anak</h3>
-            <p class="text-sm text-slate-600 mt-2">Orang tua dapat mencegah kekerasan anak dengan membangun komunikasi terbuka, memberikan pendidikan seks sesuai usia, mengawasi penggunaan media digital, serta menanamkan rasa percaya diri pada anak. Lingkungan keluarga yang penuh kasih sayang adalah benteng utama pencegahan.</p>
+            <p class="text-sm text-slate-600 mt-2">Orang tua dan guru dapat melindungi anak dengan komunikasi terbuka, pengawasan bijak, serta mengajarkan keterampilan melindungi diri. Penting juga membangun lingkungan yang aman di rumah dan sekolah.</p>
           </article>
           <article class="p-6 border rounded-2xl">
             <h3 class="font-semibold">Mengenali Tanda Kekerasan</h3>
-            <p class="text-sm text-slate-600 mt-2">Tanda kekerasan pada anak bisa berupa perubahan perilaku mendadak, rasa takut berlebihan, penurunan prestasi, luka fisik tanpa alasan jelas, hingga menarik diri dari lingkungan. Orang tua dan guru perlu peka terhadap tanda-tanda ini agar dapat segera mengambil langkah perlindungan.</p>
+            <p class="text-sm text-slate-600 mt-2">Tanda-tanda kekerasan meliputi perubahan perilaku mendadak, ketakutan berlebihan, memar atau luka tidak jelas, serta penarikan diri dari lingkungan sosial. Mengenali tanda sejak dini dapat menyelamatkan anak.</p>
           </article>
           <article class="p-6 border rounded-2xl">
             <h3 class="font-semibold">Dukungan Psikologis</h3>
-            <p class="text-sm text-slate-600 mt-2">Korban kekerasan membutuhkan dukungan psikologis berupa pendampingan emosional, konseling, serta akses layanan kesehatan mental. Mendengarkan tanpa menghakimi, memberikan rasa aman, dan mendorong anak untuk bercerita adalah langkah awal penting dalam proses pemulihan.</p>
+            <p class="text-sm text-slate-600 mt-2">Korban membutuhkan dukungan emosional. Konseling dengan psikolog membantu pemulihan trauma, meningkatkan rasa percaya diri, dan memberi rasa aman kembali pada anak maupun perempuan korban kekerasan.</p>
           </article>
         </div>
       </div>
@@ -220,7 +221,7 @@
         <h2 class="text-2xl font-bold text-primary">Kontak Kami</h2>
         <p class="mt-4 text-slate-600">Hubungi kami melalui email resmi di bawah ini.</p>
         <div class="mt-6 flex justify-center">
-          <a id="emailLink" href="mailto:lapor.sigap@gmail.com?subject=Pengaduan ke SIGAP Peduli" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-accent px-5 py-3 text-slate-900 font-semibold">
+          <a id="emailLink" href="mailto:lapor.sigap@gmail.com?subject=Pengaduan ke SIGAP Peduli" class="inline-flex items-center justify-center gap-2 rounded-2xl bg-accent px-5 py-3 text-slate-900 font-semibold min-w-[200px]">
             Email Kami <i data-lucide="mail" class="w-5 h-5"></i>
           </a>
         </div>
@@ -266,4 +267,5 @@
         Kami berkomitmen melindungi data Anda. Detail lengkap kebijakan privasi akan dicantumkan di sini.
       </p>
       <div class="mt-4 flex gap-2 justify-end">
-        <button id="closePrivacy"
+        <button id="closePrivacy" class="px-4 py-2 rounded-xl border">Tutup</button>
+      </div
